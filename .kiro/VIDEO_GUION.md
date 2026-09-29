@@ -6,15 +6,26 @@ notificaciones y ventanas con datos reales.
 
 ## Preparacion (antes de grabar)
 
-Levanta los servicios (dos terminales):
+Activa el entorno virtual UNA vez en cada terminal (asi los comandos quedan cortos:
+`pytest`, `uvicorn`, `streamlit`, sin la ruta larga):
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Levanta los servicios (dos terminales, cada una con el venv activado):
 
 ```powershell
 # Terminal 1 - API REST (mock)
-$env:DATA_PROVIDER="mock"; .\.venv\Scripts\python.exe -m uvicorn src.api:app --port 8000
+$env:DATA_PROVIDER="mock"; uvicorn src.api:app --port 8000
 
 # Terminal 2 - Dashboard (mock, PII redactada)
-$env:DATA_PROVIDER="mock"; $env:REDACT_PII="true"; .\.venv\Scripts\python.exe -m streamlit run src/dashboard.py --server.port 8501
+$env:DATA_PROVIDER="mock"; $env:REDACT_PII="true"; streamlit run src/dashboard.py --server.port 8501
 ```
+
+> Nota: si NO activas el venv, antepon `.\.venv\Scripts\python.exe -m` a los comandos
+> (p. ej. `.\.venv\Scripts\python.exe -m pytest ...`). El error "'-m' no se reconoce"
+> ocurre cuando se ejecuta `-m pytest` sin el interprete de Python delante.
 
 URLs listas:
 - Dashboard: http://127.0.0.1:8501
@@ -46,10 +57,11 @@ carga, y protege la informacion: los correos se redactan por seguridad."
 convenciones del proyecto en steering; Kiro las aplica en todo el repo."
 
 ## Escena 4 - Property-based testing (1:15-1:35)  [L4]
-**Pantalla:** corre en terminal:
+**Pantalla:** corre en terminal (con el venv ya activado):
 ```powershell
-.\.venv\Scripts\python.exe -m pytest tests/test_clustering_properties.py -q
+pytest tests/test_clustering_properties.py -q
 ```
+(Si no activaste el venv: `.\.venv\Scripts\python.exe -m pytest tests/test_clustering_properties.py -q`)
 **Narracion:** "El motor de clustering es una funcion pura. Con Hypothesis valido
 propiedades generales: no-perdida de items, idempotencia y determinismo." (Muestra el
 verde.)
