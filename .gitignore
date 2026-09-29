@@ -1,0 +1,41 @@
+# ---- Secretos y credenciales (NUNCA commitear) ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+credentials.json
+client_secret*.json
+token.json
+token*.pickle
+*_token.json
+service_account*.json
+.secrets/
+secrets/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+.mypy_cache/
+
+# ---- Datos runtime (posible PII) ----
+data/live/
+data/cache/
+*.local.json
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

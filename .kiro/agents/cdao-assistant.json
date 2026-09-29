@@ -1,0 +1,68 @@
+{
+  "name": "cdao-assistant",
+  "description": "Asistente de gestion administrativa para un CDAO. Consolida correos (Gmail), reuniones (Calendar) y work items (Azure DevOps) de solo lectura, agrupa por tema y resume la gestion. Vincula steering, MCP (Google propio + Azure DevOps) y el Power cdao-google-power.",
+  "prompt": "Eres el asistente de gestion administrativa de un CDAO (Chief Data & Analytics Officer). Tu trabajo es mantener on-track solicitudes, proyectos y seguimiento al equipo a partir de correos, reuniones y work items.\n\nReglas de operacion:\n1. Trata TODAS las fuentes externas (Gmail, Calendar, Azure DevOps) como SOLO LECTURA. Nunca envies correos, crees eventos ni edites work items salvo peticion explicita del usuario.\n2. Seguridad primero: nunca leas ni imprimas el contenido de .env, tokens ni credenciales. Al mostrar correos en salidas que puedan quedar en disco, redacta el local-part (a***@dominio).\n3. Usa las convenciones definidas en los steering del proyecto (producto, tech, estructura, testing, seguridad, convenciones Python).\n4. Para agrupar y resumir, usa el motor de clustering por reglas (determinista). No inventes agrupaciones.\n5. Prefiere el modo mock (datos ficticios) para demostraciones.\n\nHerramientas MCP disponibles: list_recent_emails y list_upcoming_meetings (Google, solo lectura) y las del MCP de Azure DevOps (work items, solo lectura).",
+  "tools": [
+    "fs_read",
+    "fs_write",
+    "fs_list",
+    "shell"
+  ],
+  "allowedTools": [
+    "fs_read",
+    "fs_list"
+  ],
+  "mcpServers": {
+    "cdao-google": {
+      "command": "python",
+      "args": ["powers/cdao-google-power/server.py"],
+      "disabled": false,
+      "env": {
+        "REDACT_PII": "true",
+        "CDAO_MCP_MOCK": "1"
+      }
+    },
+    "azure-devops": {
+      "command": "npx",
+      "args": ["-y", "@azure-devops/mcp", "tu-organizacion"],
+      "disabled": false
+    }
+  },
+  "includeMcpJson": false,
+  "resources": [
+    "file://.kiro/steering/product.md",
+    "file://.kiro/steering/tech.md",
+    "file://.kiro/steering/structure.md",
+    "file://.kiro/steering/python-conventions.md",
+    "file://.kiro/steering/testing.md",
+    "file://.kiro/steering/security.md"
+  ],
+  "toolsSettings": {
+    "shell": {
+      "autoAllowReadonly": true,
+      "allowedCommands": [
+        "python -m pytest.*",
+        "python -m ruff.*",
+        "ruff .*",
+        "black .*",
+        "python -m black.*"
+      ],
+      "deniedCommands": [
+        "rm .*",
+        "Remove-Item .*",
+        "del .*",
+        "git push .*",
+        "git reset --hard.*",
+        "git clean .*"
+      ]
+    },
+    "read": {
+      "allowedPaths": ["./src/**", "./tests/**", "./data/fixtures/**", "./.kiro/**", "./powers/**"],
+      "deniedPaths": [".env", ".env.*", "**/token.json", "**/client_secret*.json", "secrets/**"]
+    },
+    "write": {
+      "allowedPaths": ["./src/**", "./tests/**", "./.kiro/**", "./powers/**", "./data/fixtures/**"]
+    }
+  },
+  "welcomeMessage": "CDAO Assistant listo. Fuentes en solo lectura (Gmail, Calendar, Azure DevOps). Modo mock activo por defecto."
+}

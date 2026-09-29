@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "cdao-google": {
+      "type": "stdio",
+      "command": "../../.venv/Scripts/python.exe",
+      "args": ["server.py"],
+      "disabled": false,
+      "autoApprove": ["list_recent_emails", "list_upcoming_meetings"],
+      "env": {
+        "REDACT_PII": "true",
+        "CDAO_MCP_MOCK": "1"
+      }
+    }
+  }
+}

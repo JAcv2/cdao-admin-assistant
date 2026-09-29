@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cdao-google-power",
+  "version": "0.1.0",
+  "description": "Acceso de solo lectura a Google Workspace (Gmail + Calendar) para la gestion administrativa de un CDAO. Incluye un servidor MCP propio, una skill de dominio y contexto.",
+  "author": {
+    "name": "Kiro University Challenge - participante"
+  },
+  "keywords": ["cdao", "gmail", "calendar", "google-workspace", "seguimiento", "gestion"],
+  "license": "MIT"
+}
+

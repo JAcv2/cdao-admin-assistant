@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sol-001",
+    "asunto": "Solicitud de acceso a datos de ventas Q3",
+    "resumen": "El equipo comercial pide acceso al dataset de ventas para el tablero trimestral.",
+    "remitente": { "nombre": "Ana Torres", "email": "ana.torres@empresa-demo.example", "rol": "Analista Comercial" },
+    "fecha": "2026-09-22T09:15:00",
+    "prioridad": "alta",
+    "etiquetas": ["acceso", "datos", "ventas"],
+    "proyecto": "Plataforma de Datos"
+  },
+  {
+    "id": "sol-002",
+    "asunto": "Revision del modelo de churn",
+    "resumen": "Solicitan validar el modelo de churn antes del despliegue a produccion.",
+    "remitente": { "nombre": "Bruno Diaz", "email": "bruno.diaz@empresa-demo.example", "rol": "Data Scientist" },
+    "fecha": "2026-09-23T14:40:00",
+    "prioridad": "media",
+    "etiquetas": ["modelo", "churn", "revision"],
+    "proyecto": "Analitica Avanzada"
+  },
+  {
+    "id": "sol-003",
+    "asunto": "Presupuesto para licencias de BI",
+    "resumen": "Requieren aprobacion de presupuesto para renovar licencias de la herramienta de BI.",
+    "remitente": { "nombre": "Carla Ruiz", "email": "carla.ruiz@empresa-demo.example", "rol": "Gerente de BI" },
+    "fecha": "2026-09-24T08:05:00",
+    "prioridad": "media",
+    "etiquetas": ["presupuesto", "bi", "licencias"],
+    "proyecto": "Gobierno de Datos"
+  },
+  {
+    "id": "sol-004",
+    "asunto": "Incidencia calidad de datos en dashboard de ventas",
+    "resumen": "Reportan cifras inconsistentes en el tablero de ventas del ultimo cierre.",
+    "remitente": { "nombre": "Ana Torres", "email": "ana.torres@empresa-demo.example", "rol": "Analista Comercial" },
+    "fecha": "2026-09-25T11:20:00",
+    "prioridad": "alta",
+    "etiquetas": ["calidad", "datos", "ventas", "dashboard"],
+    "proyecto": "Plataforma de Datos"
+  },
+  {
+    "id": "sol-005",
+    "asunto": "Onboarding nuevo ingeniero de datos",
+    "resumen": "Coordinar accesos y ambiente para el nuevo integrante del equipo.",
+    "remitente": { "nombre": "Diego Marin", "email": "diego.marin@empresa-demo.example", "rol": "Lead de Ingenieria" },
+    "fecha": "2026-09-26T16:00:00",
+    "prioridad": "baja",
+    "etiquetas": ["equipo", "onboarding", "accesos"],
+    "proyecto": "Plataforma de Datos"
+  }
+]

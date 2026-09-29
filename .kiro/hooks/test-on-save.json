@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run Tests on Save",
+      "trigger": "PostFileSave",
+      "description": "Ejecuta la suite de tests (pytest) al guardar un archivo Python para detectar regresiones temprano.",
+      "matcher": "\\.py$",
+      "action": {
+        "type": "command",
+        "command": ".\\.venv\\Scripts\\python.exe -m pytest -q --no-header"
+      }
+    }
+  ]
+}

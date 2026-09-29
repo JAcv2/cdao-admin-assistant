@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "API Postman Testing",
+      "trigger": "PostFileSave",
+      "description": "Cuando cambia el codigo o config de la API, propone correr la coleccion Postman del CDAO Assistant para validar los endpoints.",
+      "matcher": "src[\\\\/]api\\.py$|pyproject\\.toml$|docs[\\\\/]postman[\\\\/].*\\.json$",
+      "action": {
+        "type": "agent",
+        "prompt": "El codigo o la configuracion de la API del CDAO Assistant ha cambiado. Usa el Power de Postman para validar la API: si existe una coleccion en Postman para este proyecto, ejecutala con runCollection y muestra los resultados; si no existe, propone crear una a partir de docs/postman/CDAO-Assistant.postman_collection.json. Antes de correr, recuerda que la API debe estar levantada (uvicorn src.api:app --port 8000) en modo mock. Reporta fallos y propone correcciones."
+      }
+    }
+  ]
+}

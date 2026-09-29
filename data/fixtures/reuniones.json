@@ -1,0 +1,39 @@
+[
+  {
+    "id": "reu-001",
+    "titulo": "Comite de Gobierno de Datos",
+    "inicio": "2026-09-29T15:00:00",
+    "fin": "2026-09-29T16:00:00",
+    "organizador": { "nombre": "Carla Ruiz", "email": "carla.ruiz@empresa-demo.example", "rol": "Gerente de BI" },
+    "asistentes": [
+      { "nombre": "Ana Torres", "email": "ana.torres@empresa-demo.example" },
+      { "nombre": "Diego Marin", "email": "diego.marin@empresa-demo.example" }
+    ],
+    "etiquetas": ["gobierno", "datos", "comite"],
+    "proyecto": "Gobierno de Datos"
+  },
+  {
+    "id": "reu-002",
+    "titulo": "Revision sprint Analitica Avanzada",
+    "inicio": "2026-09-30T10:00:00",
+    "fin": "2026-09-30T10:45:00",
+    "organizador": { "nombre": "Bruno Diaz", "email": "bruno.diaz@empresa-demo.example", "rol": "Data Scientist" },
+    "asistentes": [
+      { "nombre": "Diego Marin", "email": "diego.marin@empresa-demo.example" }
+    ],
+    "etiquetas": ["sprint", "modelo", "churn"],
+    "proyecto": "Analitica Avanzada"
+  },
+  {
+    "id": "reu-003",
+    "titulo": "Seguimiento incidencia calidad de datos",
+    "inicio": "2026-09-29T09:00:00",
+    "fin": "2026-09-29T09:30:00",
+    "organizador": { "nombre": "Diego Marin", "email": "diego.marin@empresa-demo.example", "rol": "Lead de Ingenieria" },
+    "asistentes": [
+      { "nombre": "Ana Torres", "email": "ana.torres@empresa-demo.example" }
+    ],
+    "etiquetas": ["calidad", "datos", "incidencia", "dashboard"],
+    "proyecto": "Plataforma de Datos"
+  }
+]

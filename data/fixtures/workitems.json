@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1001",
+    "titulo": "Provisionar acceso al dataset de ventas",
+    "estado": "activo",
+    "asignado": { "nombre": "Diego Marin", "email": "diego.marin@empresa-demo.example", "rol": "Lead de Ingenieria" },
+    "proyecto": "Plataforma de Datos",
+    "prioridad": "alta",
+    "etiquetas": ["acceso", "datos", "ventas"],
+    "url": "https://dev.azure.com/empresa-demo/Plataforma%20de%20Datos/_workitems/edit/1001"
+  },
+  {
+    "id": "1002",
+    "titulo": "Validar modelo de churn en staging",
+    "estado": "nuevo",
+    "asignado": { "nombre": "Bruno Diaz", "email": "bruno.diaz@empresa-demo.example", "rol": "Data Scientist" },
+    "proyecto": "Analitica Avanzada",
+    "prioridad": "media",
+    "etiquetas": ["modelo", "churn", "revision"],
+    "url": "https://dev.azure.com/empresa-demo/Analitica%20Avanzada/_workitems/edit/1002"
+  },
+  {
+    "id": "1003",
+    "titulo": "Corregir inconsistencia en tablero de ventas",
+    "estado": "activo",
+    "asignado": { "nombre": "Diego Marin", "email": "diego.marin@empresa-demo.example", "rol": "Lead de Ingenieria" },
+    "proyecto": "Plataforma de Datos",
+    "prioridad": "alta",
+    "etiquetas": ["calidad", "datos", "ventas", "dashboard"],
+    "url": "https://dev.azure.com/empresa-demo/Plataforma%20de%20Datos/_workitems/edit/1003"
+  },
+  {
+    "id": "1004",
+    "titulo": "Renovar licencias herramienta de BI",
+    "estado": "nuevo",
+    "asignado": { "nombre": "Carla Ruiz", "email": "carla.ruiz@empresa-demo.example", "rol": "Gerente de BI" },
+    "proyecto": "Gobierno de Datos",
+    "prioridad": "media",
+    "etiquetas": ["presupuesto", "bi", "licencias"],
+    "url": "https://dev.azure.com/empresa-demo/Gobierno%20de%20Datos/_workitems/edit/1004"
+  }
+]

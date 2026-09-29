@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "azure-devops": {
+      "command": "npx",
+      "args": ["-y", "@azure-devops/mcp", "tu-organizacion"],
+      "disabled": true,
+      "autoApprove": []
+    },
+    "cdao-google": {
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["powers/cdao-google-power/server.py"],
+      "disabled": false,
+      "autoApprove": ["list_recent_emails", "list_upcoming_meetings"],
+      "env": {
+        "REDACT_PII": "true",
+        "CDAO_MCP_MOCK": "1"
+      }
+    }
+  }
+}

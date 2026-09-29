@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Format on Save (black + ruff)",
+      "trigger": "PostFileSave",
+      "description": "Formatea con black y aplica autofix de ruff cada vez que se guarda un archivo Python.",
+      "matcher": "\\.py$",
+      "action": {
+        "type": "command",
+        "command": ".\\.venv\\Scripts\\python.exe -m black . ; .\\.venv\\Scripts\\python.exe -m ruff check --fix ."
+      }
+    }
+  ]
+}

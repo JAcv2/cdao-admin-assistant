@@ -1,0 +1,1 @@
+"""CDAO Assistant - paquete raiz."""

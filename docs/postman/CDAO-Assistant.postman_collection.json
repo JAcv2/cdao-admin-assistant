@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "CDAO Admin Assistant API",
+    "description": "Coleccion de la API REST del CDAO Admin Assistant (FastAPI). Todos los endpoints son de solo lectura. Base URL por defecto: http://127.0.0.1:8000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Verifica que la API esta viva. Devuelve {\"status\": \"ok\"}."
+      }
+    },
+    {
+      "name": "Solicitudes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/solicitudes",
+          "host": ["{{baseUrl}}"],
+          "path": ["solicitudes"]
+        },
+        "description": "Correos que requieren seguimiento (Gmail), mapeados a Solicitud."
+      }
+    },
+    {
+      "name": "Reuniones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/reuniones",
+          "host": ["{{baseUrl}}"],
+          "path": ["reuniones"]
+        },
+        "description": "Reuniones proximas del calendario (Google Calendar)."
+      }
+    },
+    {
+      "name": "Work items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/workitems",
+          "host": ["{{baseUrl}}"],
+          "path": ["workitems"]
+        },
+        "description": "Work items de Azure DevOps."
+      }
+    },
+    {
+      "name": "Temas (clustering)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/temas",
+          "host": ["{{baseUrl}}"],
+          "path": ["temas"]
+        },
+        "description": "Items agrupados por tema con el motor de clustering determinista."
+      }
+    },
+    {
+      "name": "Resumen ejecutivo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/resumen",
+          "host": ["{{baseUrl}}"],
+          "path": ["resumen"]
+        },
+        "description": "Resumen de gestion: totales, temas y personas con mas items."
+      }
+    }
+  ]
+}
